@@ -1,0 +1,339 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Apply font to EVERYTHING */
+* {
+  font-family: 'Press Start 2P';
+}
+
+/* Update your CSS to target elements specifically */
+body, button, input, h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Press Start 2P';
+}
+
+:root {
+  --bg-color: #f8d1f3; /* Light pink background from your design */
+  --card-bg: #ffffff;
+  --border-color: #000000;
+  --card-border-width: 4px; /* Thick borders for that pixel look */
+  --button-border-width: 3px; /* Thick borders for that pixel look */
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  font-size: 16px;
+  padding: 0; 
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  padding: 20px 0px;
+}
+
+.pixel-card {
+  border: var(--card-border-width) solid var(--border-color);
+  background-color: var(--card-bg);
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 0px 0px #000;
+}
+
+.card-header {
+  color: black;
+}
+
+.pixel-button {
+  border: var(--button-border-width) solid var(--border-color);
+  background-color: #ff407f; /* Light pink */
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 3px 3px 0px 0px #000;
+}
+
+.pixel-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
+.mood-button {
+  color: #000;
+}
+
+.quest-input {
+  width: 100%;
+  border: 2px solid var(--border-color);
+  padding: 20px;
+  box-shadow: 3px 3px 0px 0px #000;
+  font-size: 10px;
+}
+
+.quest-input:focus {
+  outline: none; /* Removes the default browser blue outline */
+  box-shadow: none; /* Removes your drop shadow */
+  transform: translate(2px, 2px); /* Optional: shifts it slightly for a cool "pressed" physical button feel! */
+}
+
+.quest-input::placeholder {
+  font-size: 10px;
+}
+
+.mood-emoji{
+  font-size: 12px;
+}
+
+.mood-label{
+  font-size: 9px;
+}
+
+.mood-button-container {
+  display: flex;       
+  flex-wrap: wrap;     
+  gap: 10px;            
+  margin-bottom: 20px; 
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/********** Header ***********/
+
+.journal-header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  background-color: #ff407f; 
+  box-sizing: border-box;
+  border-bottom: 4px solid #000; 
+}
+
+.journal-title {
+  font-size: 28px;
+  margin: 15px 0;
+  color: #fff;
+}
+
+.journal-subtitle {
+  font-size: 14px;
+  margin: 0 0 15px 0;
+  color: #fff;
+}
+
+.top-cards {
+  grid-column: span 2;
+  display: flex;
+  gap: 20px;
+  align-items: stretch; /* Forces both columns to match the tallest one */
+}
+
+.top-cards > section {
+  flex: 1; /* Forces 50/50 equal width */
+  display: flex;
+  flex-direction: column;
+}
+
+.top-cards .pixel-card {
+  flex: 1; /* Forces the card itself to fill the full height of the section */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0; /* Removes bottom margin so height calculates accurately */
+  box-sizing: border-box;
+}
+
+.bottom-cards {
+  grid-column: span 2; /* Bottom cards section spans across both columns */
+  gap: 20px;
+}
+
+.pixel-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0px 0px #000;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.pixel-checkbox:checked {
+  background-color: #5eead4;
+}
+
+.pixel-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: #000000;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.pixel-checkbox:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+.quest-text{
+  font-size: 10px;
+  color: #000
+}
+
+.quest-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  border: 2px solid #000; /* Add a border to each quest item */
+  box-shadow: 2px 2px 0px 0px #000; /* Add a shadow for a pixelated effect */
+  padding: 5px; /* Add some padding inside the quest item */
+}
+
+.remove-quest {
+  margin-left: auto; /* Pushes the button to the right */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  outline: none;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.remove-quest:hover {
+  color: red;
+  outline: none;
+  background: none;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.quest-input-container {
+  display: flex;
+  gap: 8px; /* Adds space between the textbox and the button */
+  margin-bottom: 15px; /* Adds space between the input section and the quests list */
+}
+
+.outer-progress-bar {
+  width: 100%;
+  height: 15px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0px 0px #000;
+  position: relative;
+  overflow: hidden;
+  margin-top: 15px;
+  margin-bottom: 15px; /* Adds space between the progress bar and the input section */
+}
+
+.inner-progress-bar {
+  height: 100%;
+  background-color: #5eead4; /* Light green */
+  transition: width 0.3s ease-in-out;
+}
+
+.header-date-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 12px;
+}
+
+.header-prev-button, .header-next-button {
+  background-color: #fff;
+  border: var(--button-border-width) solid var(--border-color);
+  box-shadow: 3px 3px 0px 0px #000;
+  cursor: pointer;
+  font-size: 12px;
+  outline: none;
+  padding: 12px;
+}
+
+.header-prev-button:active, .header-next-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
+.date-display-box {
+  border: var(--button-border-width) solid var(--border-color);
+  box-shadow: 3px 3px 0px 0px #000;
+  padding: 5px 15px;
+  font-size: 12px;
+  background-color: #ffb619;
+  color: #000;
+}
+
+/* Daily Log Calendar Section */
+
+.day-selector {
+  display: flex;
+  justify-content: left;
+  gap: 8px;
+}
+
+.day-button {
+  border: var(--button-border-width) solid var(--border-color);
+  background-color: #fff;
+  color: #000;
+  padding: 8px 4px;
+  box-shadow: 3px 3px 0px 0px #000;
+  height: 60px; 
+  width: 60px; 
+  font-size: 8px; 
+  margin-top: 15px; 
+  margin-bottom: 15px; 
+  display: flex;               /* Makes the button a flex container */
+  flex-direction: column;      /* Stacks day name and date vertically */
+  justify-content: flex-start; /* Pushes content to the top */
+  align-items: center;         /* Centers text horizontally */
+}
+
+.day-button.active {
+  background-color: #df46ec;
+  color: #fff;
+}
+
+.day-button:hover {
+  transform: translate(0px, -2px);
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
+.daily-log-input {
+  width: 97%;
+  height: 80px; /* Adjust height as needed */
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0px 0px #000;
+  font-size: 8px;
+  padding: 10px 5px 5px 8px; /* Adds a bit more space at the top */
+  line-height: 1.6;
+  resize: none; /* Prevents resizing */
+}
+
+.daily-log-input::placeholder {
+  font-size: 8px;
+}
+
+.day-mood {
+  font-size: 14px; 
+  margin-top: 2px; 
+}
